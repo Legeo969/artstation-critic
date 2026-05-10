@@ -1,0 +1,36 @@
+# Repository Settings
+# https://github.com/apps/settings
+
+repository:
+  name: artstation-critic
+  description: AI 驱动的美术作品点评工具
+  homepage: https://artstation-critic.vercel.app
+  default_branch: main
+
+  # Features
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: true
+
+  # Visibility
+  private: false
+
+  # Merge Settings
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: true
+
+  # Branch Protection
+  branches:
+    - name: main
+      protection:
+        required_pull_request_reviews:
+          dismiss_stale_reviews: true
+          require_code_owner_reviews: true
+        required_status_checks:
+          strict: true
+          contexts:
+            - test
+        enforce_admins: false
+        restrictions: null

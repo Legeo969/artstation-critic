@@ -1,0 +1,316 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+  --accent-primary: #10b981;
+  --accent-secondary: #8b5cf6;
+  --accent-warning: #f59e0b;
+  --accent-danger: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-warning: var(--accent-warning);
+  --color-accent-danger: var(--accent-danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card-bg: #18181b;
+    --card-border: #27272a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== 平滑滚动 ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== 过渡动画 ===== */
+.transition-all {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-opacity {
+  transition: opacity 0.15s ease;
+}
+
+/* ===== 阴影变量 ===== */
+:root {
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-float: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-float: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+/* ===== 毛玻璃效果 ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== 渐变背景 ===== */
+.gradient-hero {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+}
+
+/* ===== 按钮样式 ===== */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-xl font-medium
+         hover:from-emerald-500 hover:to-emerald-600 active:from-emerald-700 active:to-emerald-800
+         transition-all duration-200 shadow-elevated hover:shadow-float active:shadow-soft
+         focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.dark .btn-primary {
+  @apply focus:ring-offset-zinc-950;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-medium
+         hover:bg-zinc-800 dark:hover:bg-zinc-200 active:bg-zinc-700 dark:active:bg-zinc-300
+         transition-all duration-200 shadow-elevated hover:shadow-float active:shadow-soft
+         focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2;
+}
+
+.dark .btn-secondary {
+  @apply focus:ring-offset-zinc-950;
+}
+
+.btn-accent {
+  @apply px-6 py-3 bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white rounded-xl font-medium
+         hover:from-violet-500 hover:to-fuchsia-500 active:from-violet-700 active:to-fuchsia-700
+         transition-all duration-200 shadow-elevated hover:shadow-float active:shadow-soft
+         focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+}
+
+.dark .btn-accent {
+  @apply focus:ring-offset-zinc-950;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100
+         hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-all duration-150
+         focus:outline-none focus:ring-2 focus:ring-zinc-400;
+}
+
+/* ===== 卡片样式 ===== */
+.card {
+  @apply bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800
+         shadow-soft transition-all duration-200;
+}
+
+.card-hover {
+  @apply hover:shadow-elevated hover:border-zinc-300 dark:hover:border-zinc-700;
+}
+
+/* ===== 输入框样式 ===== */
+.input-field {
+  @apply w-full px-4 py-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800
+         rounded-xl text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500
+         focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent
+         transition-all duration-200;
+}
+
+.dark .input-field {
+  @apply focus:ring-offset-zinc-950;
+}
+
+/* ===== 加载动画 ===== */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@utility animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@utility animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent 25%, rgba(16, 185, 129, 0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+}
+
+@utility animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 1.5s linear infinite;
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@utility animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+/* ===== 骨架屏 ===== */
+.skeleton {
+  @apply bg-zinc-100 dark:bg-zinc-800 rounded-xl;
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #f5f5f5 25%, #e5e5e5 50%, #f5f5f5 75%);
+  background-size: 200% 100%;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #27272a 25%, #3f3f46 50%, #27272a 75%);
+}
+
+/* ===== 滚动条美化 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* ===== 选中态高亮 ===== */
+::selection {
+  background: rgba(16, 185, 129, 0.2);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(16, 185, 129, 0.3);
+}
+
+/* ===== 焦点可见性 ===== */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ===== 禁用态 ===== */
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ===== 错误态 ===== */
+.input-error {
+  @apply border-red-500 dark:border-red-400 focus:ring-red-500;
+}
+
+/* ===== 成功态 ===== */
+.input-success {
+  @apply border-emerald-500 dark:border-emerald-400 focus:ring-emerald-500;
+}
+
+/* ===== 工具类：延迟动画 ===== */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }

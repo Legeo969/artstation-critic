@@ -1,0 +1,61 @@
+{
+  "name": "artstation-critic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI 驱动的美术作品点评工具",
+  "keywords": [
+    "art",
+    "critique",
+    "AI",
+    "美术",
+    "点评",
+    "AI 绘画"
+  ],
+  "author": "Artstation Critic",
+  "license": "MIT",
+  "homepage": "https://github.com/liny/artstation-critic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liny/artstation-critic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liny/artstation-critic/issues"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "openai": "^6.37.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "^3.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
