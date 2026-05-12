@@ -196,16 +196,9 @@ Tests:       86 passed | 3 skipped (89)
 
 ## 🌐 部署
 
-### Vercel（推荐）
+### Netlify（推荐）
 
-```bash
-# 1. 推送到 GitHub
-git push origin master
-
-# 2. 在 Vercel 导入项目
-# 3. 配置环境变量
-# 4. 一键部署
-```
+Netlify 通过 OpenNext 适配器零配置部署，自动支持 RSC、Server Actions、SSR。
 
 详见 [DEPLOYMENT.md](./docs/DEPLOYMENT.md)。
 
@@ -230,4 +223,4 @@ MIT
 
 - [Matt Pocock](https://github.com/mattpocock) - AI 工程方法论
 - [DeepSeek](https://deepseek.com) - AI 模型
-- [Vercel](https://vercel.com) - 部署平台
+- [Netlify](https://netlify.com) - 部署平台 (OpenNext 适配器)

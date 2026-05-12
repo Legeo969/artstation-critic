@@ -16,8 +16,9 @@ Artstation Critic 项目文档总览。
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | 技术架构设计 | 开发者 |
 | [ROADMAP.md](./ROADMAP.md) | 项目路线图（Phase 1-2 已完成） | 所有人 |
 | [TESTING.md](./TESTING.md) | 测试指南和最佳实践 | 开发者 |
-| [DEPLOYMENT.md](./DEPLOYMENT.md) | 部署指南（Vercel） | 运维/开发者 |
-| [DECISIONS.md](./DECISIONS.md) | 架构决策记录（ADRs） | 开发者 |
+| [DEPLOYMENT.md](./DEPLOYMENT.md) | 部署指南（Netlify） | 运维/开发者 |
+| [DECISIONS.md](./DECISIONS.md) | 架构决策记录索引 | 开发者 |
+| [adr/](./adr/) | 独立 ADR 文件（8 条） | 开发者 |
 | [ISSUES.md](./ISSUES.md) | Issue 列表和状态 | 开发者 |
 
 ---
@@ -56,7 +57,8 @@ artstation-critic/
 │   ├── ROADMAP.md            # 路线图
 │   ├── TESTING.md            # 测试指南
 │   ├── DEPLOYMENT.md         # 部署指南
-│   ├── DECISIONS.md          # 架构决策
+│   ├── DECISIONS.md          # 架构决策索引
+│   ├── adr/                  # 独立 ADR 文件
 │   └── ISSUES.md             # Issue 列表
 │
 ├── 📂 app/                   # Next.js 页面

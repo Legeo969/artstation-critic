@@ -4,7 +4,6 @@
 repository:
   name: artstation-critic
   description: AI 驱动的美术作品点评工具
-  homepage: https://artstation-critic.vercel.app
   default_branch: main
 
   # Features
@@ -34,3 +33,36 @@ repository:
             - test
         enforce_admins: false
         restrictions: null
+
+# Labels for triage workflow
+labels:
+  - name: bug
+    color: d73a4a
+    description: 程序错误
+  - name: enhancement
+    color: a2eeef
+    description: 新功能请求
+  - name: triage
+    color: 7057ff
+    description: 待分类的 Issue
+  - name: priority:high
+    color: b60205
+    description: 高优先级
+  - name: priority:medium
+    color: ffb8c6
+    description: 中优先级
+  - name: priority:low
+    color: e4e8ed
+    description: 低优先级
+  - name: question
+    color: d876e3
+    description: 疑问
+  - name: wontfix
+    color: ffffff
+    description: 不修复
+  - name: duplicate
+    color: cfd3d7
+    description: 重复 Issue
+  - name: good first issue
+    color: 7057ff
+    description: 适合新贡献者

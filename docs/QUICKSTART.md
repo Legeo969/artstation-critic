@@ -184,26 +184,26 @@ npm run start
 
 ---
 
-## 🚀 部署到 Vercel
+## 🚀 部署到 Netlify
 
-### 方法 1：一键部署
+Netlify 通过 OpenNext 适配器零配置部署 Next.js 16。
+
+### 方法：Git 导入
 
 1. 推送到 GitHub：
    ```bash
-   git push origin master
+   git push origin main
    ```
 
-2. 访问 [Vercel](https://vercel.com/)
-3. 导入项目
-4. 配置环境变量（可选）
-5. 点击"Deploy"
+2. 访问 https://app.netlify.com
+3. "Add new site" → "Import an existing project"
+4. 选择仓库，Netlify 自动检测 Next.js
+5. 配置环境变量 `DEEPSEEK_API_KEY`（可选，也可在 Settings 页面配置）
+6. 点击 "Deploy"
 
-### 方法 2：Vercel CLI
+> 项目已包含 `netlify.toml`（指定 Node.js 20），无需额外配置。
 
-```bash
-npm i -g vercel
-vercel
-```
+详见 [DEPLOYMENT.md](./docs/DEPLOYMENT.md)。
 
 ---
 

@@ -204,5 +204,5 @@ Artstation Critic 项目开发和迭代计划。
 关键决策：
 - AI 模型：DeepSeek-VL（免费）+ DALL-E 3（优化图）
 - 存储：IndexedDB 本地存储（无服务器）
-- 部署：Vercel（免费托管）
+- 部署：Netlify（免费托管，OpenNext 适配器）
 - 语言：中文界面，英文代码
